@@ -117,7 +117,28 @@ int main () {
      printf("%+5.2f\n", price01);
      printf("%+10.1f\n", price02);
 
-     
+     /*
+      ARITHMETIC OPERATOR
+      */
+
+     int xx = 10;
+     int yy = 3;
+     int zz = 0;
+
+     //zz = xx + yy;
+     //zz = xx - yy;
+     //zz = xx * yy;
+     //zz = xx / yy; divinding by integer will NOT restrain the decimal
+     //zz = xx % yy; modulo will give the remaining in that case 1 is the answer
+     xx++; //increment by 1
+     xx--; //decrinment by 1
+    
+     //xx+=2; //value of x add 2(augmented sign operator) 
+     //xx*=2; //multiply x by 2
+     //xx/=2; //x divided by 2
+     //xx-=2; //x minus 2
+     printf("%d\n", zz);
+     printf("%d\n", xx);
     return 0;
 
 }
