@@ -13,6 +13,7 @@ number or ASCII character
  */
 #include<stdio.h>
 #include<stdbool.h>
+#include<string.h>
 
 int main () {
 
@@ -139,6 +140,58 @@ int main () {
      //xx-=2; //x minus 2
      printf("%d\n", zz);
      printf("%d\n", xx);
+
+
+     /*
+      USER INPUT
+      */
+
+     int age1;
+     char name_is[10];
+     char name_was[10];
+     
+     printf("Enter your age: ");
+     scanf(" %d", &age1); //& is the adress operator
+     
+     printf("Enter your name: ");
+     scanf(" %9s", name_is); /*
+                             -to avoid buffer overflow add the number
+                             of bytes -1
+                             -char array name decays into char * so doing 
+                             &name_is will result in a bad behavior
+                             -scanf can't read white spaces (check for
+                             alternative like fgets)
+                             -to avoid a new line character being transfered
+                             in the input buffer, for scanf put a white space
+                             afther format specifier
+
+                             */
+
+     printf("Your age is %s and your name is %d\n", name_is, age1);
+
+
+     getchar(); /*
+                 When pressing enter, the new line character  "\n"
+                 is still in the buffer. therefore it will be read by fgets 
+                 (in the input buffer) and give the illusion to skip without
+                 writing anything (although there's something in the buffer)
+
+                 */
+     printf("Enter your name(new variable): ");
+     fgets(name_was, sizeof(name_was), stdin); /*
+                                            name of variable, sizeof will
+                                            get the size(bytes) instead of 
+                                            manually entering it, get from
+                                            standard input (can also be a file)
+                                            */
+     name_was[strlen(name_was) - 1] = '\0'; /*
+                                            will avoid new line and is 
+                                            maybe is safer(?)
+
+                                             */
+     printf("Your name is %s\n", name_was);
+
+
     return 0;
 
 }
