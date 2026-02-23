@@ -70,6 +70,54 @@ int main () {
      exit code 0 = it was a safe exit (no error)
      where as bool 0 = false
      */
+
+    /*
+    FORMAT SPECIFIERS & OPTIONAL MODIFIERS
+     */
+    int age = 25;
+    float price = 19.99;
+    double pi = 3.141592;
+    char currency = '$';
+    char name[] = "Suh dud";
+
+    printf("%d\n", age);
+    printf("%f\n", price);
+    printf("%lf\n", pi);
+    printf("%c\n", currency);
+    printf("%s\n", name);
+
+    //Optional modifiers: WIDTH
+    int num01 = 1;
+    int num011 = -1;
+    double num2 = 10;
+    printf("%4d\n", num01); //empty space BEFORE starting to print
+                            //number of caracter counts in the WIDTH
+    printf("%10lf\n", num2);
+
+    printf("%-4d\n", num01); //empty space AFTER the variable is printed 
+
+    printf("%04d\n", num01); //0 will appear instead of empty spaces
+   
+    printf("%+d\n or %+d\n",num01, num011); //display sign
+    
+    //Optional modifiers: precision
+
+     float price01 = 19.99;
+     float price02 = -1.50;
+
+     printf("%f\n", price01); //standard behavior will display 6 digits after
+
+     printf("%.2f\n", price01); //amount of digits to display
+     
+     printf("%.1f\n", price01); //will round up
+
+     //Mix both optional modifiers
+
+     printf("%7.1f\n", price01);
+     printf("%+5.2f\n", price01);
+     printf("%+10.1f\n", price02);
+
+     
     return 0;
 
 }
