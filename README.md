@@ -8,4 +8,8 @@ This tutorial will follow the following
 #### tutorial/day-two timestamp -> 35:05 to 1:06:53
 ##### IMPORTANT: 
 User inputs has a lot of interations with the buffers.
-Check [the following link](https://security.stackexchange.com/questions/95245/security-implications-of-neglecting-the-extra-byte-for-null-termination-in-c-c) for: null terminator, strlen & sizeof.  
+Check [the following link](https://security.stackexchange.com/questions/95245/security-implications-of-neglecting-the-extra-byte-for-null-termination-in-c-c) for: null terminator, strlen & sizeof.
+
+#### tutorial/day-three timestamp -> 1:06:53 to 1:25:25
+
+
