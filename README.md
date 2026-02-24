@@ -4,3 +4,5 @@
 using math.h, use -lm when compiling otherwise an error will occur.
 - This project is not safe at all
 
+- Another little project: Mad libs
+- Exercise into always adding null terminator
