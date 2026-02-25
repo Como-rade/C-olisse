@@ -1,4 +1,3 @@
-## C-olisse pt. 2
-- Printf modifiers WIDTH & PRECISION
-- User input (scanf and fgets) VERY IMPORTANT BUFFER LESSONS
+## C-olisse pt. 4
+- Basic math functions with math.h and stdlib.h
 
