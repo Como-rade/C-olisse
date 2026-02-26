@@ -18,6 +18,5 @@ Check [the following link](https://security.stackexchange.com/questions/95245/se
 ##### IMPORTANT:
 - Explains [getchar()](https://www.reddit.com/r/C_Programming/comments/18rygdt/cant_get_my_head_around_with_getchar_function/#:~:text=In%20second%20case%2C%20you%20do,%2C%20l%2C%20l%2C%20o.&text=ohkk%20got%20it%20getchar(),is%20happening%20behind%20the%20scene?)
 - Explains [sleep in a loop](https://stackoverflow.com/questions/25627535/printf-and-sleep-inside-for-loop)
-- Explains [the use of fflush(stdin)](https://stackoverflow.com/questions/39738163/usage-of-getchar-and-fflushstdin
- [also](https://stackoverflow.com/questions/4023643/second-scanf-is-not-working)
+- Explains [the use of fflush(stdin)](https://stackoverflow.com/questions/39738163/usage-of-getchar-and-fflushstdin) & [also](https://stackoverflow.com/questions/4023643/second-scanf-is-not-working)
  - FIND SOMETHING ABOUT THE BUFFERS CUZ SHIT IS CRAZY
