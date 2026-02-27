@@ -22,6 +22,6 @@ Check [the following link](https://security.stackexchange.com/questions/95245/se
 - FIND SOMETHING ABOUT THE BUFFERS CUZ SHIT IS CRAZY
 
 #### tutorial/day-six timestamp -> 2:10:27 to 3:00:04
- -Explains when to use [fflush, getchar and the "right alternatives"](
+- Explains when to use [fflush, getchar and the "right alternatives"](
          https://c-faq.com/stdio/gets_flush1.html)
- -Convert string into long int with [strtol](https://www.tutorialspoint.com/c_standard_library/c_function_strtol.htm)
+- Convert string into long int with [strtol](https://www.tutorialspoint.com/c_standard_library/c_function_strtol.htm)
