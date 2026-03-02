@@ -1,4 +1,3 @@
-## C-olisse pt. 2
-- Printf modifiers WIDTH & PRECISION
-- User input (scanf and fgets) VERY IMPORTANT BUFFER LESSONS
+## C-olisse pt. 7
+- Check theory/ for every subject
 
