@@ -25,3 +25,9 @@ Check [the following link](https://security.stackexchange.com/questions/95245/se
 - Explains when to use [fflush, getchar and the "right alternatives"](
          https://c-faq.com/stdio/gets_flush1.html)
 - Convert string into long int with [strtol](https://www.tutorialspoint.com/c_standard_library/c_function_strtol.htm)
+
+#### tutorial/day-seven timestamp -> 3:00:04 to 5:13:50
+- Check theory/ and practice/ for every subject seen
+- Code to clean [buffer](https://stackoverflow.com/questions/28056284/is-this-the-best-way-to-clear-input-buff-in-c)
+
+
