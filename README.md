@@ -30,4 +30,10 @@ Check [the following link](https://security.stackexchange.com/questions/95245/se
 - Check theory/ and practice/ for every subject seen
 - Code to clean [buffer](https://stackoverflow.com/questions/28056284/is-this-the-best-way-to-clear-input-buff-in-c)
 
+#### tutorial/day-eight timestamp -> 5:13:50 to END
+- Check theory/ for every subject seen
+- [Escape Sequences](https://en.wikipedia.org/wiki/Escape_sequences_in_C)
+- [memset basics](https://stackoverflow.com/questions/1735919/whats-the-best-way-to-reset-a-char-in-c)
+- [Reference for any function](cplusplus.com)_ find it little clearer than man sometimes
+
 
