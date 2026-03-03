@@ -1,4 +1,6 @@
-## C-olisse pt. 2
-- Printf modifiers WIDTH & PRECISION
-- User input (scanf and fgets) VERY IMPORTANT BUFFER LESSONS
+## C-olisse pt. eight
+- theory/ directory for all the subject
+- struct, malloc, calloc, realloc, enum, pointer, fileI/O
+- escape sequence (e.g. \n, \r, ect.)
+- important links will be in main README file
 
