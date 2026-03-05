@@ -19,7 +19,7 @@ README will be used to take notes in this case.
 - Use flag CURLVERSION_NOW to have the most recent info.
 
 #### easy libcurl
-- To start a so called handle session CURL_ `*`curlcurl_easy_init(); [doc](https://curl.se/libcurl/c/curl_easy_init.html)
+- To start a so called handle session ** CURL \*curl = curl_easy_init(); ** [doc](https://curl.se/libcurl/c/curl_easy_init.html)
 - Don't forget to close the session with curl_easy_cleanup(curl); (assuming curl is variable name here)
 - To set an option use curl_easy_setopt(CURL `*`handle, CURLoption option, parameter);[doc](https://curl.se/libcurl/c/curl_easy_setopt.html)
 - Generally speaking, the first setopt should be curl_easy_setopt(handle, CURLOPT_URL, "https://example.com/"); which we initialize the website we want to work on
