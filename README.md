@@ -19,10 +19,10 @@ README will be used to take notes in this case.
 - Use flag CURLVERSION_NOW to have the most recent info.
 
 #### easy libcurl
-- To start a so called handle session **CURL (U+002A)curl = curl_easy_init();** [doc](https://curl.se/libcurl/c/curl_easy_init.html)
-- Don't forget to close the session with curl_easy_cleanup(curl); (assuming curl is variable name here)
-- To set an option use curl_easy_setopt(CURL \*handle, CURLoption option, parameter);[doc](https://curl.se/libcurl/c/curl_easy_setopt.html)
-- Generally speaking, the first setopt should be curl_easy_setopt(handle, CURLOPT_URL, "https://example.com/"); which we initialize the website we want to work on
+- To start a so called handle session **CURL\* curl = curl_easy_init();** [doc](https://curl.se/libcurl/c/curl_easy_init.html)
+- Don't forget to close the session with **curl_easy_cleanup(curl);** (assuming curl is the variable name here)
+- To set an option use **curl_easy_setopt(CURL\* handle, CURLoption option, parameter);** [doc](https://curl.se/libcurl/c/curl_easy_setopt.html)
+- Generally speaking, the first setopt should be **curl_easy_setopt(handle, CURLOPT_URL, "https://example.com/");** which we initialize the website we want to work on
 - In my case, to create a custom header check [CURLOPT_HTTPHEADER explained](https://curl.se/libcurl/c/CURLOPT_HTTPHEADER.html)
 - By default, an internal callback is set where the result will appear in stdout. To save the data elsewhere in the program, refer to [CURLOPT_WRITEFUNCTION explained](https://curl.se/libcurl/c/CURLOPT_WRITEFUNCTION.html) and [CURLOPT_WRITEDATA explained](https://curl.se/libcurl/c/CURLOPT_WRITEDATA.html)
 - Meaning of [void\* and how to use it](https://stackoverflow.com/questions/11626786/what-does-void-mean-and-how-to-use-it#:~:text=A%20pointer%20to%20void%20is,It%20gets%20called%20like%20so:)
