@@ -41,5 +41,5 @@ ___
 ### Libcurl tutorial
 - Every note will be in the tutorial/curl README
 - Day One stopped at: Handle the easy libcurl
-
+- Day Two stopped at: success = curl_easy_perform(handle);
 
