@@ -38,4 +38,8 @@ Check [the following link](https://security.stackexchange.com/questions/95245/se
 
 ___
 
+### Libcurl tutorial
+- Every note will be in the tutorial/curl README
+- Day One stopped at: Handle the easy libcurl
+
 
