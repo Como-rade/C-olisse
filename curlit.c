@@ -8,12 +8,17 @@ struct memory {
   size_t size;
 };
 
+void get_key(char *key);
 static size_t cb(char *data, size_t size, size_t nmemb, void *clientp);
 
 int main(void){
-    struct curl_slist *list = NULL;
-    list = curl_slist_append(list, "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzlmNmUzNDNkMzI5YzYyNTdkOTdkMzM1Njk4MzhiMiIsIm5iZiI6MTc3MjU3Mzk1MS4xMTgsInN1YiI6IjY5YTc1NGZmMjIxNjMzZjUwNDA5NzVjNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uLtZM52bRfhhwE2Reja-dVs_rsWwKp9nFX5rSaaMZdc");
 
+    char key[1024] = {0};
+    get_key(key);
+    //printf("key is :%s\n", key);
+
+    struct curl_slist *list = NULL;//for the header
+    list = curl_slist_append(list, key);
     struct memory chunk = { 0 };
 
     CURLcode initi =  curl_global_init(CURL_GLOBAL_ALL);
@@ -30,15 +35,18 @@ int main(void){
     
     if(cinit){
         printf("IM HERE\n");
+        
         CURLcode result;
         curl_easy_setopt(cinit, CURLOPT_URL, 
                 "https://api.themoviedb.org/3/movie/11");
         curl_easy_setopt(cinit, CURLOPT_HTTPHEADER, list);
         curl_easy_setopt(cinit, CURLOPT_WRITEFUNCTION, cb);
         curl_easy_setopt(cinit, CURLOPT_WRITEDATA, (void *)&chunk);
+        
         result = curl_easy_perform(cinit);
        // printf("%d\n", result);
         //printf("%s\n", chunk.response);
+        
         free(chunk.response);
         curl_easy_cleanup(cinit);
     }
@@ -80,4 +88,28 @@ static size_t cb(char *data, size_t size, size_t nmemb, void *clientp)
     fclose(p_file);
 
   return realsize;
+}
+
+void get_key(char *key){
+    FILE *p_file = fopen("key.txt", "r");
+    char buffer[1024] = {0};
+
+    if(p_file == NULL){
+        printf("Could not open file\n");
+        exit(1);
+    }
+
+    fgets(buffer ,sizeof(buffer) , p_file);
+    printf("%ld\n", strlen(buffer));
+    printf("%s\n", buffer);
+    buffer[strlen(buffer)-1] = '\0'; /*usually, in a case where it ends with
+                                       a newline is  considered
+                                       a char therefore to add a null pointer
+                                       length-1
+                                      */
+    printf("length : %ld\n"
+            "KEY : %s\n", strlen(buffer), buffer);
+
+    strncpy(key, buffer, strlen(buffer));
+    fclose(p_file);
 }

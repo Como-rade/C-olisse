@@ -27,5 +27,8 @@ README will be used to take notes in this case.
 - By default, an internal callback is set where the result will appear in stdout. To save the data elsewhere in the program, refer to [CURLOPT_WRITEFUNCTION explained](https://curl.se/libcurl/c/CURLOPT_WRITEFUNCTION.html) and [CURLOPT_WRITEDATA explained](https://curl.se/libcurl/c/CURLOPT_WRITEDATA.html)
 - Meaning of [void\* and how to use it](https://stackoverflow.com/questions/11626786/what-does-void-mean-and-how-to-use-it#:~:text=A%20pointer%20to%20void%20is,It%20gets%20called%20like%20so:)
 - Callback is defined as: a function passed as an argument into another function, designed to be executed ("called back") after the first function completes a specific task or event
+- To connect to the site and execute any given option **CURLcode curl_easy_perform(CURL\* easy_handle);** is used. It is synchronous. [doc](https://curl.se/libcurl/c/curl_easy_perform.html)
+- In CURLOPT **CURLOPT_ERRORBUFFER** can be used to have human readable errors
+
 
 **STOPPED AT success = curl_easy_perform(handle); for today**
