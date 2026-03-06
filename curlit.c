@@ -44,8 +44,17 @@ int main(void){
         curl_easy_setopt(cinit, CURLOPT_WRITEDATA, (void *)&chunk);
         
         result = curl_easy_perform(cinit);
-       // printf("%d\n", result);
-        //printf("%s\n", chunk.response);
+
+        /*
+        CURLOPT_HEADER 1 will include the header in the response
+        curl_easy_setopt(cinit, CURLOPT_URL, 
+                "https://wordcounter.net/character-count");
+        curl_easy_setopt(cinit, CURLOPT_HEADER, 1);
+        curl_easy_setopt(cinit, CURLOPT_WRITEFUNCTION, cb);
+        curl_easy_setopt(cinit, CURLOPT_WRITEDATA, (void *)&chunk);
+        result = curl_easy_perform(cinit);
+        printf("%d\n", result);
+        printf("%s\n", chunk.response);*/
         
         free(chunk.response);
         curl_easy_cleanup(cinit);

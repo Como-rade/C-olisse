@@ -29,6 +29,7 @@ README will be used to take notes in this case.
 - Callback is defined as: a function passed as an argument into another function, designed to be executed ("called back") after the first function completes a specific task or event
 - To connect to the site and execute any given option **CURLcode curl_easy_perform(CURL\* easy_handle);** is used. It is synchronous. [doc](https://curl.se/libcurl/c/curl_easy_perform.html)
 - In CURLOPT **CURLOPT_ERRORBUFFER** can be used to have human readable errors
+- **CURLOPT_HEADER** will include the header in the response. Setonff to 1
+- Got a little sidetracked but here: xdg-open to open anytype of file, got firefox as well (firefox to open it)
 
-
-**STOPPED AT success = curl_easy_perform(handle); for today**
+**STOPPED AT Upload data to a remote site (reread it and try to implement it)**
