@@ -1,4 +1,4 @@
-## C-olisse pt. 1
+#C-olisse pt. 1
 
 This tutorial will follow the following 
 [tutorial from Bro Code](https://www.youtube.com/watch?v=xND0t1pr3KY)
@@ -42,4 +42,4 @@ ___
 - Every note will be in the tutorial/curl README
 - Day One stopped at: Handle the easy libcurl
 - Day Two stopped at: success = curl_easy_perform(handle);
-
+- Day Three REREAD: Upload data to a remote site(need to implement it)
