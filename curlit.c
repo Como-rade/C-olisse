@@ -38,7 +38,7 @@ int main(void){
         
         CURLcode result;
         curl_easy_setopt(cinit, CURLOPT_URL, 
-                "https://api.themoviedb.org/3/movie/11");
+                "https://api.themoviedb.org/3/search/movie?query=spaceball");
         curl_easy_setopt(cinit, CURLOPT_HTTPHEADER, list);
         curl_easy_setopt(cinit, CURLOPT_WRITEFUNCTION, cb);
         curl_easy_setopt(cinit, CURLOPT_WRITEDATA, (void *)&chunk);
