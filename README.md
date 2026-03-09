@@ -32,4 +32,14 @@ README will be used to take notes in this case.
 - **CURLOPT_HEADER** will include the header in the response. Setonff to 1
 - Got a little sidetracked but here: xdg-open to open anytype of file, got firefox as well (firefox to open it)
 
-**STOPPED AT Upload data to a remote site (reread it and try to implement it)**
+#### Upload data to a remote site
+- This one was a headache and a half
+- **curl_easy_setopt(cinit, CURLOPT_POST, 1L);** by default (I think) it is set to GET, this (1L) will set it to http POST. [doc](https://curl.se/libcurl/c/CURLOPT_POST.html)
+- **curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);** generally PUT is used to upload, 1L is the proper flag
+- **curl_easy_setopt(cinit, CURLOPT_READFUNCTION, read_callback);** pointer to the callback function(how the data is READ before transfer) [doc](https://curl.se/libcurl/c/CURLOPT_READFUNCTION.html)
+- **curl_easy_setopt(cinit, CURLOPT_READDATA, (void\* )f_ptr);** fourth argument of the CUROPT_READFUNCTION [doc](https://curl.se/libcurl/c/CURLOPT_READDATA.html)
+- For good practice always set the file size to be uploaded using **curl_easy_setopt(CURL\* handle, CURLOPT_INFILESIZE_LARGE, curl_off_t filesize);** [doc](https://curl.se/libcurl/c/CURLOPT_INFILESIZE_LARGE.html) filesize has to be the EXACT file size of the file otherwise it won't work
+- [10minapi](https://10minapi.com/) let's you create a temporary api endpoint to test your calls (pretty neat)
+- Read through Passwords, Http authentication and part of Http posting
+
+**STOPPED AT MIME API**
