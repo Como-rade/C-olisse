@@ -44,3 +44,4 @@ ___
 - Day Two stopped at: success = curl_easy_perform(handle);
 - Day Three REREAD: Upload data to a remote site(need to implement it)
 - Day Four stopped at: MIME API
+- Day Five: Finished reading, check the last note in the README of tutorial/curl
