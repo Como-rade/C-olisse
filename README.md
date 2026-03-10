@@ -42,4 +42,17 @@ README will be used to take notes in this case.
 - [10minapi](https://10minapi.com/) let's you create a temporary api endpoint to test your calls (pretty neat)
 - Read through Passwords, Http authentication and part of Http posting
 
-**STOPPED AT MIME API**
+#### MISC
+- **MIME** is an extension to the email protocols. It supports text, images, video, audio and files. Uses base64 to encode. It is used to format the emails. SMTP is a protocol that is used to send and receive emails (one of many).[Video explaning it](https://www.youtube.com/watch?v=qvFFS_OFV9g)
+- Setting CURLOPT_POSTFIELDS to "" or NULL does not stop libcurl from doing a POST. It makes it POST without any data to send!  **curl_easy_setopt(handle, CURLOPT_HTTPGET, 1L);** should be called to reset to GET. Do not forget that curl_easy_perform is sticky which means it retains all options until you change it.
+- **curl_easy_setopt(CURL\* handle, CURLOPT_CUSTOMREQUEST, char\* method);** can be used for any protocol to send a custom request (exemple PUT, DELETE, ect.). Better to use the built in to avoid errors 
+- libcurl speaks HTTP 1.1 by default, to change it say to HTTP 1.0 use **curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);**
+
+
+#### Showing progress
+- **curl_easy_setopt(CURL/* handle, CURLOPT_NOPROGRESS, long onoff);** will show a progress bar. Is always set to, change it to 0L to show the progress bar
+- **curl_easy_setopt(CURL\* handle, CURLOPT_XFERINFOFUNCTION, progress_callback);** to create your own progress bar.CURLOPT_NOPROGRESS must be set to 0 to make this function actually get called. 
+- **curl_easy_setopt(CURL\* handle, CURLOPT_XFERINFODATA, void\* pointer);** to fill the struct with some info.
+
+#### NOTE
+- Although I read through the whole thing, since most of the protocols and concept are new and not sure how to test them, it would be preferable to revist them when I get a better understanding and can actually run a few test.
