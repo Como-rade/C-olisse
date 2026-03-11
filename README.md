@@ -1,47 +1,30 @@
-# C-olisse pt. 1
+# Header files & libraries
 
-This tutorial will follow the following 
-[tutorial from Bro Code](https://www.youtube.com/watch?v=xND0t1pr3KY)
+#### [Video](https://www.youtube.com/watch?v=5UMHbzZGQuE) by Kevin Lynch
+- Explains the basic on .h which includes: include guards(to avoid duplication), function prototype, the related .c file and how to compile. Check for the comments in every file for more details.
+##### For the next section we will be referring to the video from 4:57 to the end
+- A header file can call another header file (exemple: general.h can be called in helper1.h and helper2.h)
+- The way they compile is (in what we did in the repository): the rad2volume.c, since it calls rad2volume.h theyt will be both compiled into rad2volume.o, same for main.c which calls rad2volume.h, they will be both compiled into main.o
+- They're then Linked to make the program. THIS IS AN OVERVIEW AND SIMPLIFICATION OF THE WHOLE PROCESS but you get the idea
+- In the header files do not include: **private** function prototypes, constants, macros (as good practice). In our program, it would be the **cuber(double x)** function. We don't want it availble outside of the scope of this file.
+- Avoid adding global variable in the header file. May cause problems at compilation.
+- What should go in a header file: include guard, other include files, new data types, **public** function prototype, constants and macros.
+- extern global variable (ex: extern int global), compared to the other one, we do not allocate space for this variable, we're declaring it but not defining it or allocating the space for it.
 
-#### tutorial/day-one timestamp -> 0:00 to 35:05
+#### Other tips [Video](https://www.youtube.com/watch?v=8KyZedtkEhk)
+- use flag -H when compiling to check if there's multiple copy of the same header
+- Idempotent: Has an effect carried out once (no duplicates) That is why the macro symbols #ifndef...#endif are important
+- <header.h> tells the compiler to look into *system include paths* run: `echo "" | gcc -E -Wp, -v -` will show all the paths to include
+- "header.h" tells the compiler to look into our main directory
+- When changing something in one file, instead of recompiling use the following method:
+    - Compile to object using: gcc -Wall -Wextra(both of them will check for errors) -c(flag to make an object file) prog.c
+    - This will create object file, to link them use: gcc obj1.o obj.o -o name 
 
-#### tutorial/day-two timestamp -> 35:05 to 1:06:53
-##### IMPORTANT: 
-User inputs has a lot of interations with the buffers.
-Check [the following link](https://security.stackexchange.com/questions/95245/security-implications-of-neglecting-the-extra-byte-for-null-termination-in-c-c) for: null terminator, strlen & sizeof.
 
-#### tutorial/day-three timestamp -> 1:06:53 to 1:25:25
+#### Static vs Dynamic [Link](https://www.reddit.com/r/C_Programming/comments/19733rv/static_or_dynamic/)
+- In general (english) "static" means "unchanging", and "dynamic" means "changing". Dynamic means it will/can change when the program runs, during the execution, after the compilation. Static means it won't/can't change while the program is running.
+- C is statically typed, which means the type of a variable must be known when the program is being compiled, before it runs. To a certain point because there are such things as void * therefore it is weakly static
+- static int some_global_variable = 10; static void some_function(void) { do_something(); } In these cases, "static" is limiting the scope of the variable "some_global_variable" and the function "some_function" to just the file that they appear in. They cannot be referenced or called directly from another compilation unit (c file, or object file). (Technically, if the code in the other file got ahold of a pointer to these static objects, they could access them, but barring that, they cannot.)
+- If the static key is within a function, the value will persist at each call.
 
-#### tutorial/day-four timestamp -> 1:25:25 to 1:36:43
 
-#### tutorial/day-five timestamp -> 1:36:43 to 2:10:27
-##### IMPORTANT:
-- Explains [getchar()](https://www.reddit.com/r/C_Programming/comments/18rygdt/cant_get_my_head_around_with_getchar_function/#:~:text=In%20second%20case%2C%20you%20do,%2C%20l%2C%20l%2C%20o.&text=ohkk%20got%20it%20getchar(),is%20happening%20behind%20the%20scene?)
-- Explains [sleep in a loop](https://stackoverflow.com/questions/25627535/printf-and-sleep-inside-for-loop)
-- Explains [the use of fflush(stdin)](https://stackoverflow.com/questions/39738163/usage-of-getchar-and-fflushstdin) and [also](https://stackoverflow.com/questions/4023643/second-scanf-is-not-working)
-- FIND SOMETHING ABOUT THE BUFFERS CUZ SHIT IS CRAZY
-
-#### tutorial/day-six timestamp -> 2:10:27 to 3:00:04
-- Explains when to use [fflush, getchar and the "right alternatives"](
-         https://c-faq.com/stdio/gets_flush1.html)
-- Convert string into long int with [strtol](https://www.tutorialspoint.com/c_standard_library/c_function_strtol.htm)
-
-#### tutorial/day-seven timestamp -> 3:00:04 to 5:13:50
-- Check theory/ and practice/ for every subject seen
-- Code to clean [buffer](https://stackoverflow.com/questions/28056284/is-this-the-best-way-to-clear-input-buff-in-c)
-
-#### tutorial/day-eight timestamp -> 5:13:50 to END
-- Check theory/ for every subject seen
-- [Escape Sequences](https://en.wikipedia.org/wiki/Escape_sequences_in_C)
-- [memset basics](https://stackoverflow.com/questions/1735919/whats-the-best-way-to-reset-a-char-in-c)
-- [Reference for any function](cplusplus.com)_ find it little clearer than man sometimes
-
-___
-
-### Libcurl tutorial
-- Every note will be in the tutorial/curl README
-- Day One stopped at: Handle the easy libcurl
-- Day Two stopped at: success = curl_easy_perform(handle);
-- Day Three REREAD: Upload data to a remote site(need to implement it)
-- Day Four stopped at: MIME API
-- Day Five: Finished reading, check the last note in the README of tutorial/curl
