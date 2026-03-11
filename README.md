@@ -45,3 +45,7 @@ ___
 - Day Three REREAD: Upload data to a remote site(need to implement it)
 - Day Four stopped at: MIME API
 - Day Five: Finished reading, check the last note in the README of tutorial/curl
+___
+
+### Header files in C
+- Check README in branch tutorial/headerfiles-libraries for all the necessary information 
